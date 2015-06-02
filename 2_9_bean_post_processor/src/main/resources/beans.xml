@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="au.com.attra.AuditCheckBeanPostProcessor" />
+
+	<bean name="aa" class="au.com.attra.Battery" init-method="init_method"
+		destroy-method="destroy">
+		<property name="name" value="AA" />
+		<property name="price" value="15" />
+		<property name="rechargeable" value="true" />
+	</bean>
+
+	<bean name="cd" class="au.com.attra.Disc" init-method="init_method"
+		destroy-method="destroy">
+		<property name="name" value="CD-R" />
+		<property name="price" value="9.5" />
+		<property name="capacity" value="2" />
+	</bean>
+
+
+
+</beans>

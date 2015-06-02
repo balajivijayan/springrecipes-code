@@ -56,6 +56,7 @@ public class Cashier {
 
 	public void closeFile() {
 		try {
+			System.out.println("writer closed");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
