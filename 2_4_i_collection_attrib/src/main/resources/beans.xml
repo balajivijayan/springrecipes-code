@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="sequenceGenerator" class="au.com.attra.SequenceGeneratorList">
+		<property name="prefix" value="AT" />
+		<property name="initial" value="100" />
+		<property name="suffixes">
+			<list>
+				<value>A</value>
+				<bean class="java.net.URL">
+					<constructor-arg value="http" />
+					<constructor-arg value="www.apress.com" />
+					<constructor-arg value="/" />
+				</bean>
+				<null />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sequenceGeneratorSet" class="au.com.attra.SequenceGeneratorSet">
+		<property name="prefix" value="A" />
+		<property name="initial" value="100" />
+		<property name="suffixes">
+			<set>
+				<value>A</value>
+				<bean class="java.net.URL">
+					<constructor-arg value="http" />
+					<constructor-arg value="www.apress.com" />
+					<constructor-arg value="/" />
+				</bean>
+				<null />
+				<value>A</value> <!-- Value A is ignored because no duplicate values stored in set -->
+				<value>B</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean name="sequenceGeneratorMap" class="au.com.attra.SequenceGeneratorMap">
+		<property name="prefix" value="A" />
+		<property name="initial" value="100" />
+		<property name="suffixes">
+			<map>
+				<entry>
+					<key>
+						<value>type</value>
+					</key>
+					<value>A</value>
+				</entry>
+				<entry>
+					<key>
+						<value>url</value>
+					</key>
+					<bean class="java.net.URL">
+						<constructor-arg value="http" />
+						<constructor-arg value="www.apress.com" />
+						<constructor-arg value="/" />
+					</bean>
+				</entry>
+				<entry key="type1" value="B" />
+				<entry>
+					<key>
+						<value>null</value>
+					</key>
+					<value>null</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean name="sequenceGeneratorProp" class="au.com.attra.SequenceGeneratorProp">
+		<property name="prefix" value="A" />
+		<property name="initial" value="100" />
+		<property name="suffixes">
+			<props>
+				<prop key="type">A</prop>
+				<prop key="url">http://www.apress.com/</prop>
+				<prop key="null">null</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
