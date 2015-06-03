@@ -7,9 +7,9 @@ public class Disc extends Product{
 		super();
 	}
 
-	public Disc(String name, double price) {
-		super(name, price);
-	}
+/*	public Disc(String name, double price) {
+		//super(name, price);
+	}*/
 
 	public int getCapacity() {
 		return capacity;

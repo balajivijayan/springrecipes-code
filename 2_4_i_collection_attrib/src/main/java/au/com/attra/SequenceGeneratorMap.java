@@ -48,7 +48,7 @@ public class SequenceGeneratorMap {
 		StringBuffer sequence = new StringBuffer();
 		sequence.append(initial);
 		sequence.append(initial + counter++);
-		for (Map.Entry entry : suffixes.entrySet()) {
+		for (@SuppressWarnings("rawtypes") Map.Entry entry : suffixes.entrySet()) {
 			sequence.append("-");
 			sequence.append(entry.getKey());
 			sequence.append("@");

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<beans profile="summer">
+		<bean name="aaa" class="au.com.attra.Battery">
+			<property name="name" value="AAA" />
+			<property name="price" value="15.0" />
+			<property name="rechargeable" value="true" />
+		</bean>
+
+		<bean name="cd-r" class="au.com.attra.Disc">
+			<property name="name" value="CD-R" />
+			<property name="price" value="10.0" />
+			<property name="capacity" value="700" />
+		</bean>
+	</beans>
+
+	<beans profile="winter">
+		<bean name="aaa" class="au.com.attra.Battery">
+			<property name="name" value="AAA" />
+			<property name="price" value="18.0" />
+			<property name="rechargeable" value="true" />
+		</bean>
+
+		<bean name="cd-r" class="au.com.attra.Disc">
+			<property name="name" value="CD-R" />
+			<property name="price" value="8.0" />
+			<property name="capacity" value="700" />
+		</bean>
+	</beans>
+
+</beans>

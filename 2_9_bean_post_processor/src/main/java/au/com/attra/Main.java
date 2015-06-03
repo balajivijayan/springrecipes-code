@@ -8,9 +8,9 @@ public class Main {
 	public static void main(String[] args) {
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("beans.xml");
 		System.out.println("Context Created");
-		Product battery = ctx.getBean("aa", Battery.class);
+		Battery battery = ctx.getBean("aa", Battery.class);
 		System.out.println("Bean retrieved");
-		System.out.println(battery.getName());
+		System.out.println(battery.getName() + battery.getPrice() + battery.isRechargeable());
 		System.out.println(new Integer(20).getClass().getSimpleName());
 		System.out.println(battery instanceof Battery);
 		//Bean will be destroyed only after a call to destroy method.

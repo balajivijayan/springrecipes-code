@@ -6,6 +6,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		ApplicationContext context = new GenericXmlApplicationContext(
 				"beans.xml");
 

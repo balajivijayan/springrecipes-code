@@ -5,6 +5,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class Main {
 	public static void main(String args[]) {
+		@SuppressWarnings("resource")
 		ApplicationContext context = new GenericXmlApplicationContext(
 				"beans.xml");
 
@@ -33,5 +34,11 @@ public class Main {
 		System.out.println("Sequence Using Prop");
 		System.out.println(sequenceGeneratorProp.getSequence());
 		System.out.println(sequenceGeneratorProp.getSequence());
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

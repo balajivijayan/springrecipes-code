@@ -12,6 +12,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 public class Main {
 
 	public static void main(String[] args) {
+		@SuppressWarnings({ "resource", "unused" })
 		ApplicationContext ctx = new GenericXmlApplicationContext("beans.xml");
 
 		Resource resource = new ClassPathResource("discount.properties");

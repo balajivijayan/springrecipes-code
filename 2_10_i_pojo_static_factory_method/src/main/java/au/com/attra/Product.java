@@ -2,17 +2,17 @@ package au.com.attra;
 
 public abstract class Product {
 	private String name;
-	private double price;
+	private Double price;
 
 	public Product() {
 		super();
 	}
 
-/*	public Product(String name, double price) {
+	public Product(String name, Double price) {
 		super();
 		this.name = name;
 		this.price = price;
-	}*/
+	}
 
 	public String getName() {
 		return name;
@@ -22,11 +22,11 @@ public abstract class Product {
 		this.name = name;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
