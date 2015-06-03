@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="banner" class="au.com.attra.BannerLoader" init-method="showBanner">
+		<property name="banner">
+			<value>classpath:banner.txt</value>
+		</property>
+	</bean>
+	
+	<!-- Other ways to load files in spring -->
+	
+		<bean name="banner2" class="au.com.attra.BannerLoader" init-method="showBanner">
+		<property name="banner">
+			<value>file:C:/Users/balaji.vijayan/Downloads/banner.txt</value>
+		</property>
+	</bean>
+
+</beans>
