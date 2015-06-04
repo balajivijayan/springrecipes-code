@@ -30,7 +30,7 @@ public class Main {
 				+ aaa2.getPrice());
 		System.out.println(cd2.getName() + " cd price in winter "
 				+ cd2.getPrice());
-
+		
 	}
 
 }
