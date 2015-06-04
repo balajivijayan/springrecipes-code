@@ -9,10 +9,10 @@ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 		<aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
 			<aop:pointcut id="loggingOperation"
 				expression="within(au.com.attra.aop.ArithmeticCalculator+) || within(au.com.attra.aop.UnitCalculator+)" />
-			<!-- <aop:before pointcut-ref="loggingOperation" method="logBefore" /> -->
+			<aop:before pointcut-ref="loggingOperation" method="logBefore" />
 		</aop:aspect>
 
-		<aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
+<!-- 		<aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
 			<aop:before pointcut-ref="loggingOperation" method="logBefore" />
 			<aop:after pointcut-ref="loggingOperation" method="logAfter" />
 			<aop:after-returning pointcut-ref="loggingOperation"
@@ -20,7 +20,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 			<aop:after-throwing pointcut-ref="loggingOperation"
 				throwing="e" method="logAfterThrowing" />
 			<aop:around pointcut-ref="loggingOperation" method="logAround" />
-		</aop:aspect>
+		</aop:aspect> -->
 
 	</aop:config>
 

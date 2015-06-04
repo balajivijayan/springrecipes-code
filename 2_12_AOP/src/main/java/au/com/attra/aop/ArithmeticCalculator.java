@@ -8,4 +8,6 @@ public interface ArithmeticCalculator {
 	public double mul(double a, double b);
 
 	public double div(double a, double b);
+	
+	public void init();
 }

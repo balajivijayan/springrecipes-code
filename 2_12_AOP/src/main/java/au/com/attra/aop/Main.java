@@ -13,6 +13,7 @@ public class Main {
 		arithmeticCalculator.sub(4, 3);
 		arithmeticCalculator.mul(2, 3);
 		arithmeticCalculator.div(4, 2);
+		arithmeticCalculator.init();
 		
 		UnitCalculator unitCalculator = (UnitCalculator) context
 				.getBean("unitCalculator");

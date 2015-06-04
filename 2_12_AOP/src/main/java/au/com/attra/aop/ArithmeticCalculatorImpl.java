@@ -1,7 +1,11 @@
 package au.com.attra.aop;
 
 public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
-
+	
+	public void init() {
+		System.out.println("Arithmetic calculator initialized");
+	}
+	
 	@Override
 	public double add(double a, double b) {
 		double result = a + b;
