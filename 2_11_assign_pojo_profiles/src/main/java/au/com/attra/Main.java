@@ -31,6 +31,7 @@ public class Main {
 		System.out.println(cd2.getName() + " cd price in winter "
 				+ cd2.getPrice());
 		
+		context.close();
 	}
 
 }

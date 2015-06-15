@@ -1,6 +1,7 @@
 package au.com.attra.aop;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class Main {
@@ -19,5 +20,7 @@ public class Main {
 				.getBean("unitCalculator");
 		unitCalculator.kilogramToPound(10);
 		unitCalculator.kilometerToMile(5);
+		
+		((ClassPathXmlApplicationContext) context).close();
 	}
 }
