@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="baseSequenceGenerator" class="au.com.attra.SequenceGenerator"
+		abstract="false">
+		<property name="prefix" value="A" />
+		<property name="initial" value="100" />
+		<property name="suffix" value="B" />
+	</bean>
+
+	<bean name="sequenceGenerator1" parent="baseSequenceGenerator">
+	</bean>
+
+	<bean name="sequenceGenerator2" parent="baseSequenceGenerator">
+		<property name="prefix" value="X" />
+		<property name="suffix" value="Y" />
+	</bean>
+
+	<!-- Inheriting POJO's of different classes -->
+
+	<bean name="baseGenerator" abstract="true">
+		<property name="initial" value="10000" />
+	</bean>
+
+	<bean name="reverseGenerator" class="au.com.attra.ReverseGenerator"
+		parent="baseGenerator">
+	</bean>
+
+	<bean name="sequenceGenerator3" class="au.com.attra.SequenceGenerator"
+		parent="baseGenerator">
+		<property name="prefix" value="AB" />
+		<property name="suffix" value="XY" />
+	</bean>
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="baseSequenceGenerator"
+		class="au.com.attra.SequenceGenerator" abstract="true">
+		<property name="prefix" value="A" />
+		<property name="initial" value="1000" />
+		<property name="suffixes">
+			<list>
+				<value>A</value>
+				<value>B</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sequenceGenerator" class="au.com.attra.SequenceGenerator"
+		parent="baseSequenceGenerator">
+		<property name="suffixes">
+			<list merge="true">
+				<value>A</value>
+				<value>C</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
