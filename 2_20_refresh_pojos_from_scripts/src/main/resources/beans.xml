@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/lang
+http://www.springframework.org/schema/lang/spring-lang-3.2.xsd">
+
+	<bean name="rateCalculator" class="au.com.attra.FixedRateCalculator">
+		<property name="rate" value="12.5" />
+	</bean>
+
+	<lang:bsh name="interestCalculator" script-source="classpath:SimpleInterestCalculator.bsh"
+		script-interfaces="au.com.attra.InterestCalculator" refresh-check-delay="5000">
+		<lang:property name="rateCalculator" ref="rateCalculator" />
+	</lang:bsh>
+
+</beans>
