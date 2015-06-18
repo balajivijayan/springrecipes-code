@@ -15,7 +15,6 @@ public class Main {
 			InterestCalculator calculator = (InterestCalculator) context
 					.getBean("interestCalculator");
 			System.out.println(calculator.calculate(100000, 1));
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
