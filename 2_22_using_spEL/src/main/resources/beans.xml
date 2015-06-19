@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:p="http://www.springframework.org/schema/p">
+
+	<bean name="commonData" class="au.com.attra.CommonData">
+		<property name="commonProperties" value="#{@systemProperties}" />
+		<property name="userOS" value="#{@systemProperties['os.name']}" />
+		<property name="userRegion"
+			value="#{@systemProperties['user.region']?:'unknown region'}" />
+		<property name="randomNumber" value="#{ T(java.lang.Math).random() * 100.0 }" />
+		<property name="email" value="#{emailUtilities.email}" />
+	</bean>
+
+
+	<bean id="emailUtilities" class="au.com.attra.EmailUtilities"
+		p:email="webmaster@acme.org" p:password="springrecipes" p:host="localhost:25" />
+</beans>

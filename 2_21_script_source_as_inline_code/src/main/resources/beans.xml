@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/lang
+http://www.springframework.org/schema/lang/spring-lang-3.2.xsd">
+
+	<bean name="rateCalculator" class="au.com.attra.FixedRateCalculator">
+		<property name="rate" value="12.5" />
+	</bean>
+
+	<lang:bsh id="interestCalculator"
+		script-interfaces="au.com.attra.InterestCalculator">
+		<lang:inline-script>
+<![CDATA[
+		import au.com.attra.RateCalculator;
+		RateCalculator rateCalculator;
+		void setRateCalculator(RateCalculator aRateCalculator) {
+		rateCalculator = aRateCalculator;
+		}
+		double calculate(double amount, double year) {
+		return amount * year * rateCalculator.getAnnualRate();
+		}
+		]]>
+		</lang:inline-script>
+		<lang:property name="rateCalculator" ref="rateCalculator" />
+	</lang:bsh>
+
+</beans>
